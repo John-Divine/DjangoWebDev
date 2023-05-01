@@ -1,0 +1,463 @@
+{% load static %}
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <title>John's Portfolio Project</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+        <!-- animate css -->
+        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+        <!-- owl craousel css -->
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.theme.css' %}">
+        <link rel="stylesheet" href="{% static 'css/jquery.fancybox.css' %}">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <!-- responsive css -->
+        <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <!-- Template Javascript Files
+        ================================================== -->
+        <!-- modernizr js -->
+        <script src="{% static 'js/vendor/modernizr-2.6.2.min.js' %}"></script>
+        <!-- jquery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- owl carouserl js -->
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <!-- bootstrap js -->
+
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <!-- wow js -->
+        <script src="{% static 'js/wow.min.js' %}"></script>
+        <!-- slider js -->
+        <script src="{% static 'js/slider.js' %}"></script>
+        <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+        <!-- template main js -->
+        <script src="{% static 'js/main.js' %}"></script>
+
+</head>
+
+<body class="w3-white">
+
+
+ <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+        <header id="top-bar" class="navbar-fixed-top animated-header">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <!-- /responsive nav button -->
+
+                    <!-- logo -->
+                    <div class="navbar-brand"><h2>
+                                <p>John's Portfolio</p>
+                                </h2>
+                    </div>
+                    <!-- /logo -->
+                </div>
+                <!-- main menu -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <div class="main-menu">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="/" >Home</a>
+                            </li>
+                            <li>
+                                <a href="/competence_info" >Competence</a>
+
+                            </li>
+                            <li>
+                                <a href="/all_projects" >Projects</a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- /main nav -->
+            </div>
+        </header>
+
+{% if personal_list %}
+   {% for p in personal_list%}
+
+
+ <!--
+        ==================================================
+        Slider Section Start
+        ================================================== -->
+        <section id="hero-area" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="block wow fadeInUp" data-wow-delay=".3s">
+
+                            <!-- Slider -->
+                            <section class="cd-intro">
+                                <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s" >
+                                <span>HI,I AM {{p.name}} & I AM A</span><br>
+                                <span class="cd-words-wrapper">
+                                    <b class="is-visible">Backend Developer</b>
+                                    <b>Data Scientist</b>
+                                    <b>Computer Scientist</b>
+                                </span>
+                                </h1>
+                                </section> <!-- cd-intro -->
+                                <!-- /.slider -->
+                                <h2 class="wow fadeInUp animated" data-wow-delay=".6s" >
+                                    {{p.intro}}
+                                </h2>
+                                <a class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green" data-wow-delay=".9s" href="#works" data-section="#works" ><p><i class="fa fa-home fa-fw w3-margin-right "></i>{{p.addr}}</p>
+          </a>
+                             <a class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green" data-wow-delay=".9s" href="#works" data-section="#works" ><p><i class="fa fa-envelop fa-fw w3-margin-right"></i>{{p.email}}</p>
+          </a>
+                             <a class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green" data-wow-delay=".9s" href="#works" data-section="#works" ><p><i class="fa fa-phone fa-fw w3-margin-right"></i>{{p.tel}}</p>
+          </a>
+                             <a class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green" data-wow-delay=".9s" href="#works" data-section="#works" ><p><i class="fa fa-calendar fa-fw w3-margin-right w3-large "></i>{{p.birthday}}</p>
+          </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--/#main-slider-->
+            <!--
+            ==================================================
+            Slider Section Start
+            ================================================== -->
+            <section id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="block wow fadeInLeft" data-wow-delay=".3s" data-wow-duration="500ms">
+                                <h2>
+                                ABOUT ME
+                                </h2>
+                                <p>
+                                    {{p.bio}}
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="block wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
+                                <img src="{% if p.my_pic %}
+            {{ p.my_pic.url }}
+            {% else %}
+            {% static 'img/default.jpg'%}
+            {% endif %}"alt="Me">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> <!-- /#about -->
+      {% endfor%}
+          {% endif %}
+
+
+ {% if competence_list %}
+ <section class="global-page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block">
+                            <h2>Competence</h2>
+                            <ol class="breadcrumb">
+                                <li>
+                                    <a href="/">
+                                        <i class="ion-ios-home"></i>
+                                        Home
+                                    </a>
+                                </li>
+                                <li class="active">Competence</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+ <div class="container-fluid">
+              <div class=" row d-flex justify-content-center">
+                   <section id="team">
+            <div class="container">
+                <div class="row">
+                    <h2 class="subtitle text-center">My Skills</h2>
+
+     {% for p in competence_list %}
+                    <div class="col-md-3">
+                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
+                            <div class="team-img">
+                                <img src="{% if p.image %} {{ p.image.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" class="team-pic" alt="">
+                            </div>
+                            <h3 class="team_name">{{p.title}}</h3>
+                            <p class="team_text">{{ p.description}} </p>
+                        </div>
+                    </div>
+
+     {% endfor %}
+              </div>
+ </div>
+                   </section>
+              </div>
+ </div>
+     {% endif %}
+ {% if education_list %}
+
+<div class="w3-content w3-margin-top" id="scoped-content" style="max-width:1400px;">
+<div class="w3-row-padding">
+    <h2 class="subtitle text-center">Education</h2>
+   {% for p in education_list %}
+  <div class="w3-container">
+      <div class="w3-container w3-card-4 w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa  fa-fw w3-margin-right w3-large w3-text-teal"></i>{{p.title}} </h2>
+        <div class="w3-container">
+            <div class="card-body">
+              <p>{{ p.description}}</p>
+            </div>
+            <small class="text-muted">{{p.year}}</small>
+            <br/>
+        </div>
+        </div>
+  </div>
+
+   {% endfor %}
+</div>
+</div>
+{% endif %}
+{% if experience_list %}
+<div class="w3-content w3-margin-top" id="scoped-content" style="max-width:1400px;">
+<div class="w3-row-padding">
+    <h2 class="subtitle text-center">Experiences</h2>
+   {% for p in experience_list %}
+  <div class="w3-container">
+      <div class="w3-container w3-card-4 w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa  fa-fw w3-margin-right w3-large w3-text-teal"></i>{{p.title}}</h2>
+        <div class="w3-container">
+            <div class="card-body">
+              <p >{{ p.description}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">{{p.year}}</small>
+              </div>
+            </div>
+        </div>
+        </div>
+  </div>
+   {% endfor%}
+</div>
+</div>
+{% endif %}
+
+{% if projecthighlight %}
+ <!--
+        ==================================================
+            Global Page Section Start
+        ================================================== -->
+        <section class="global-page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block">
+                            <h2>All Projects</h2>
+                            <ol class="breadcrumb">
+                                <li>
+                                    <a href="/">
+                                        <i class="ion-ios-home"></i>
+                                        Home
+                                    </a>
+                                </li>
+                                <li class="active">Projects</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+ <!--
+            ==================================================
+            Portfolio Section Start
+            ================================================== -->
+            <section id="works" class="works">
+                <div class="container">
+                    <div class="section-heading">
+                        <h1 class="title wow fadeInDown" data-wow-delay=".3s">All the projects</h1>
+                        <p class="wow fadeInDown" data-wow-delay=".5s">
+                            Here are all the projects I've worked on,they are all interesting.
+                        </p>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+
+         {% for p in projecthighlight %}
+
+                        <div class="col-sm-4 col-xs-12">
+                            <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+                                <div class="img-wrapper">
+                                    <img src="{% if p.image %}
+            {{ p.image.url }}
+            {% else %}
+            {% static 'img/default.jpg'%}
+            {% endif %}" class="img-responsive" alt="this is a title" >
+                                    <div class="overlay">
+                                        <div class="buttons">
+                                            <a rel="gallery" class="fancybox" href="">Github</a>
+                                            <a href="{{ p.get_absolute_url }}">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <figcaption>
+                                <h4>
+                                <a>
+                                   {{p.title}}
+                                </a>
+                                </h4>
+                                <p>
+                                    {{ p.description|truncatechars:35 }}
+                                </p>
+                                    <small class="text-muted">{{p.date}}</small>
+                                </figcaption>
+                            </figure>
+                        </div>
+     {% endfor %}
+                    </div>
+                </div>
+            </section>
+</div>
+{% endif %}
+
+
+{% if projectdetail %}
+ <!--
+        ==================================================
+            Global Page Section Start
+        ================================================== -->
+        <section class="global-page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block">
+                            <h2>Project Details</h2>
+                            <ol class="breadcrumb">
+                                <li>
+                                    <a href="/">
+                                        <i class="ion-ios-home"></i>
+                                        Home
+                                    </a>
+                                </li>
+                                <li class="active">Projects / {{projectdetail.title}}</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+   <div class="w3-content container" style="max-width:1400px">
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <img class="rounded" width="100%" src="{% if projectdetail.image %}
+            {{ projectdetail.image.url }}
+            {% else %}
+            {% static 'img/default.jpg'%}
+            {% endif %}">
+    <div class="w3-container">
+      <h3><b>{{projectdetail.title}}</b></h3>
+      <h5><span class="w3-opacity">{{projectdetail.date}}</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>{{projectdetail.description}}</p>
+        <p ><b>{{projectdetail.tools}}</b></p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12 btn-group">
+            <p><button class="w3-button w3-padding-large w3-white w3-border"><b><a href="{{projectdetail.demo}}">Demo</a></b></button></p>
+            <p><button class="w3-button w3-padding-large w3-white w3-border"><b><a href="{{projectdetail.github}}">On Github</a></b></button></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+   </div>
+{% endif %}
+
+        <section id="call-to-action">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block">
+                            <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">SO WHAT YOU THINK ?</h1>
+                            <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Lets work together.</p>
+                            <a class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Contact Me</a>
+                                <ul class="social">
+
+                                <a href="http://wwww.facebook.com/diengajohn.divine" class="Facebook btn ">
+                                    <i class="ion-social-facebook"></i>
+                                </a>
+
+                                <a href="http://twitter.com/DiengaJohn?s=09" class="Twitter btn">
+                                    <i class="ion-social-twitter"></i>
+                                </a>
+
+                                <a href="http://www.linkedin.com/in/john-divine-dienga-5ab29a1bb" class="Linkedin btn">
+                                    <i class="ion-social-linkedin"></i>
+                                </a>
+
+                                <a href="http://wwww.gmail.com" class="Google Plus btn">
+                                    <i class="ion-social-googleplus"></i>
+                                </a>
+
+                        </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+</body>
+   <footer id="footer" class="w3-container  w3-center w3-margin-top">
+                <div class="container-fluid">
+                    <div class="col-md">
+
+                <p>Copyright &copy; 2021-{% now 'Y' %} DIENGA JOHN DIVINE</p>
+                <P>All rights reserved</P>
+                        <P>Worked with Nervtek</P>
+                <p>Powered by Django.</p>
+
+
+            </footer> <!-- /#footer -->
+
+</html>
